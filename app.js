@@ -58,10 +58,12 @@ launch_cors(app)
 
 var login = require('./routes/new/login'); // 登录注册接口
 var request = require('./routes/new/request'); // 请求接口
+var table = require('./routes/new/table'); // table接口
 
 
 app.use('/login', login);
 app.use('/request', request);
+app.use('/table', table);
 /* ********************************************总接口结束**************************/
 // server.listen(80,function(){//服务监听
 //  		 console.log('服务已启动')
