@@ -2,18 +2,15 @@
 var express = require('express'); //引入express模块
 var app = express(); //获得express实例
 var fs = require("fs"); //获得文件模块
-
-//var server = require('http').Server(app);//创建服务
 var server = require('http').createServer(app); //创建服务
 
 
-var socketio = require('socket.io'); //引入socket模块
-/* ********************************************************引入基本模块 结束*/
 
-/* ****************************************************跟随项目启动 开始 */
-// var launch_socket = require('./utils/launch/launch_socket'); //1  引入 socket.io
-// var io = launch_socket(server, socketio)
-let socketId = undefined;
+
+
+/* ****************************************************socketio 开始 */
+
+let socketId = undefined;//只是为了测试
 var socketio = require('socket.io');
 var io = socketio(4000); //4000端口
 
@@ -35,7 +32,7 @@ setInterval(() => {
 		console.log('没有此socketId')
 	}
 }, 2000)
-
+/* ********************************************************socketio 结束*/
 
 
 app.use(express.static(__dirname + '/public')); // 设置静态资源中间件
