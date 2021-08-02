@@ -24,14 +24,15 @@ io.on('connection', function (socket) {
 });
 
 /* 发送事件 */
-setInterval(() => {
-	if (io.sockets.connected[socketId]) {
-		io.sockets.connected[socketId].emit('newInfo', 'reward');
-		console.log('发送成功')
-	} else {
-		console.log('没有此socketId')
-	}
-}, 2000)
+// setInterval(() => {
+// 	if (io.sockets.connected[socketId]) {
+// 		io.sockets.connected[socketId].emit('newInfo', 'reward');
+// 		console.log('发送成功')
+// 	} else {
+// 		console.log('没有此socketId')
+// 	}
+// }, 2000)
+
 /* ********************************************************socketio 结束*/
 
 
@@ -47,7 +48,11 @@ const launch_cors = require('./utils/launch/launch_cors'); //3  launch_cors 全�
 launch_cors(app)
 
 
-
+app.get('/socket', function (req, res) {
+	io.sockets.connected[socketId].emit('newInfo', 'reward');
+   res.send({code:200,data:{}});
+   
+})
 /* ********************************************总接口开始**************************/
 
 // var login = require('./routes/login/login');// 登录注册接口

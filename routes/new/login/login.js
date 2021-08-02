@@ -12,18 +12,24 @@ module.exports = function (req, res) {
 		if (req.body.username == "system") {
 			res.send({
 				code: 200,
-				username: req.body.username,
-				roleArr: ['system'],
 				token: req.body.username,
-				time: 7955078400000
+				time: 7955078400000,
+				data:{
+					username: req.body.username,
+					roleArr: ['system'],
+					
+				}
 			})
 		}else if(req.body.username == "test"){
 			res.send({
 				code: 200,
-				username: req.body.username,
-				roleArr: ['test'],
 				token: req.body.username,
-				time: 7955078400000
+				time: 7955078400000,
+				data:{
+					username: req.body.username,
+					roleArr: ['test'],
+					
+				}
 			})
 		}
 
