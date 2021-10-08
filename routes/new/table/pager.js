@@ -12,7 +12,8 @@ module.exports = function (req, res) {
 					Bank_of_deposit: "华商银行深圳分行",
 					account: "5102100219000258489", 
 					Total_amount: 1000000, 
-					remark: "待总经理审批"
+					remark: "待总经理审批",
+					status:1,
 				}
 			  )
 		  }
