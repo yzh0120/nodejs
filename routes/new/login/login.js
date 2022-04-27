@@ -12,22 +12,23 @@ module.exports = function (req, res) {
 		if (req.body.username == "system") {
 			res.send({
 				code: 200,
-				token: req.body.username,
-				time: 7955078400000,
+				
 				data:{
-					username: req.body.username,
-					roleArr: ['system'],
-					
+					// username: req.body.username,
+					// roleArr: ['system'],
+					token: req.body.username,
+					expireDateTimeSpan: 7955078400000,
 				}
 			})
 		}else if(req.body.username == "test"){
 			res.send({
 				code: 200,
-				token: req.body.username,
-				time: 7955078400000,
+				
 				data:{
-					username: req.body.username,
-					roleArr: ['test'],
+					// username: req.body.username,
+					// roleArr: ['test'],
+					token: req.body.username,
+					expireDateTimeSpan: 7955078400000,
 					
 				}
 			})
